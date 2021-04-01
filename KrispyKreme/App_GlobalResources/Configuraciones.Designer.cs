@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Usuario y/o contraseña invalidos..
+        /// </summary>
+        internal static string MensajeErrorLogin {
+            get {
+                return ResourceManager.GetString("MensajeErrorLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cuponera Krispy.
         /// </summary>
         internal static string ProyectoNombre {
