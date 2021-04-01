@@ -134,12 +134,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\plugins\normalize.css" />
+    <Content Include="Content\plugins\plantilla\bootstrap.min.css" />
+    <Content Include="Content\plugins\plantilla\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\site\site.css" />
     <Content Include="Scripts\comunes\comun.js" />
     <Content Include="Scripts\home\home.js" />
+    <Content Include="Scripts\plugins\plantilla\anime.js" />
+    <Content Include="Scripts\plugins\plantilla\bootstrap.min.js" />
+    <Content Include="Scripts\plugins\plantilla\jquery.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -155,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\plugins\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

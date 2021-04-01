@@ -6,8 +6,21 @@ Krispy.Comun = (function () {
     let ComunLoad = function () {
 
         this.Initialize = function () {
-            
-        };        
+            this.Plantilla();
+        };      
+
+        this.Plantilla = function () {
+            jQuery(document).ready(function ($) {
+                $('.fadeshop').hover(
+                    function () {
+                        $(this).find('.captionshop').fadeIn(150);
+                    },
+                    function () {
+                        $(this).find('.captionshop').fadeOut(150);
+                    }
+                );
+            });
+        }
         
     };
 

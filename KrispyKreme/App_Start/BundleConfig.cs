@@ -12,6 +12,15 @@ namespace KrispyKreme
                       "~/Content/site/site.css",
                       "~/Content/plugins/normalize.css"));
 
+            bundles.Add(new StyleBundle("~/Content/plantilla").Include(                      
+                      "~/Content/plugins/plantilla/style.css",
+                      "~/Content/plugins/plantilla/bootstrap.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/plantilla").Include(
+                      "~/Scripts/plugins/plantilla/anime.js",
+                      "~/Scripts/plugins/plantilla/bootstrap.min.js",
+                      "~/Scripts/plugins/plantilla/jquery.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/comunes").Include(
                       "~/Scripts/comunes/comun.js"));
 
