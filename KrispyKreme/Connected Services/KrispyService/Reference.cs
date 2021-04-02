@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KrispyKreme.ServiceReference1 {
+namespace KrispyKreme.KrispyService {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValidaCupon", Namespace="http://schemas.datacontract.org/2004/07/ServiceKrispy")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValidaCupon", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class ValidaCupon : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -75,48 +75,48 @@ namespace KrispyKreme.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="KrispyService.IService")]
+    public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ValidarCupon", ReplyAction="http://tempuri.org/IService1/ValidarCuponResponse")]
-        KrispyKreme.ServiceReference1.ValidaCupon ValidarCupon(int idCupon);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ValidarCupon", ReplyAction="http://tempuri.org/IService/ValidarCuponResponse")]
+        KrispyKreme.KrispyService.ValidaCupon ValidarCupon(int idCupon);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ValidarCupon", ReplyAction="http://tempuri.org/IService1/ValidarCuponResponse")]
-        System.Threading.Tasks.Task<KrispyKreme.ServiceReference1.ValidaCupon> ValidarCuponAsync(int idCupon);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ValidarCupon", ReplyAction="http://tempuri.org/IService/ValidarCuponResponse")]
+        System.Threading.Tasks.Task<KrispyKreme.KrispyService.ValidaCupon> ValidarCuponAsync(int idCupon);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : KrispyKreme.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    public interface IServiceChannel : KrispyKreme.KrispyService.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<KrispyKreme.ServiceReference1.IService1>, KrispyKreme.ServiceReference1.IService1 {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<KrispyKreme.KrispyService.IService>, KrispyKreme.KrispyService.IService {
         
-        public Service1Client() {
+        public ServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public ServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public KrispyKreme.ServiceReference1.ValidaCupon ValidarCupon(int idCupon) {
+        public KrispyKreme.KrispyService.ValidaCupon ValidarCupon(int idCupon) {
             return base.Channel.ValidarCupon(idCupon);
         }
         
-        public System.Threading.Tasks.Task<KrispyKreme.ServiceReference1.ValidaCupon> ValidarCuponAsync(int idCupon) {
+        public System.Threading.Tasks.Task<KrispyKreme.KrispyService.ValidaCupon> ValidarCuponAsync(int idCupon) {
             return base.Channel.ValidarCuponAsync(idCupon);
         }
     }

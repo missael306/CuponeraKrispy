@@ -144,8 +144,8 @@ namespace KrispyKreme.Controllers
 
         public JsonResult CanjearCupon(int idCupon)
         {
-            var validacion = new ServiceReference1.ValidaCupon();
-            using (ServiceReference1.Service1Client cliente = new ServiceReference1.Service1Client())
+            var validacion = new KrispyService.ValidaCupon();
+            using (KrispyService.ServiceClient cliente = new KrispyService.ServiceClient())
             {
                 validacion = cliente.ValidarCupon(idCupon);                
             }
