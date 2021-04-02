@@ -13,16 +13,19 @@
             @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
         </div>
         <div class="col-md-6">
-            @Html.LabelFor(model => model.Serie, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Serie, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
-            @Html.ValidationMessageFor(model => model.Serie, "", new { @class = "text-danger" })
+            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+            @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })            
         </div>
     </div>
 
     <div class="row form-group">
         <div class="col-md-6">
+            @{ 
+                string valorFecha = (Model.CuponID == 0) ? DateTime.Now.ToString("yyyy-MM-dd") : Model.Vigencia.ToString("yyyy-MM-dd");
+            }
             @Html.LabelFor(model => model.Vigencia, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Vigencia, new { htmlAttributes = new { @class = "form-control", @type = "date", @required = "required" } })
+            <input type="date" name="Vigencia" class="form-control" required value="@valorFecha" />            
             @Html.ValidationMessageFor(model => model.Vigencia, "", new { @class = "text-danger" })
         </div>
         <div class="col-md-6">
@@ -37,6 +40,11 @@
             @Html.LabelFor(model => model.EstablecimientoID, htmlAttributes: new { @class = "control-label col-md-2" })
             @Html.DropDownListFor(model => model.EstablecimientoID, new SelectList((List<Establecimiento>)ViewBag.lstEstablecimientos, "EstablecimientoID", "Nombre", Model.EstablecimientoID), "--Seleccione--", new { @class = "form-control", @required = "required" })
             @Html.ValidationMessageFor(model => model.EstablecimientoID, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Serie, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Serie, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+            @Html.ValidationMessageFor(model => model.Serie, "", new { @class = "text-danger" })
         </div>
     </div>
 }

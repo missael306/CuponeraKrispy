@@ -23,8 +23,9 @@ namespace KrispyKreme.Controllers
 
         #region Metodos        
         public ActionResult Index()
-        {            
-            return View();
+        {
+            List<Cupon> lstModel = _db.LstCupones();
+            return View("Index", lstModel);
         }                  
         #endregion       
     }

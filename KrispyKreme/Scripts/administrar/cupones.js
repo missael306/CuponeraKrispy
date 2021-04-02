@@ -30,6 +30,9 @@ Krispy.Cupones = (function () {
                         data: "Codigo",
                     },
                     {
+                        data: "Titulo",
+                    },
+                    {
                         data: "Serie",
                     },
                     {
@@ -78,7 +81,7 @@ Krispy.Cupones = (function () {
             $("#btnAddCupon").click(function () {
                 $.ajax({
                     url: `${CONTROLLER}/FrmCupon`,
-                    data: { IdCupon: $("#CuponID").val() }
+                    data: { IdCupon: 0 }
                 }).done(function (response) {
                     $("#bodyAddCupon").html("");
                     $("#bodyAddCupon").html(response);

@@ -120,6 +120,7 @@ namespace KrispyKreme.Services
                         modificar.EstatusID = model.EstatusID;
                         modificar.EstablecimientoID = model.EstablecimientoID;
                         modificar.Vigencia = model.Vigencia;
+                        modificar.Titulo = model.Titulo;
                         res = (db.SaveChanges() > 0);
                     }
                     else

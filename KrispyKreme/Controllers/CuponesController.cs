@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClosedXML.Excel;
 using KrispyKreme.Models;
 using KrispyKreme.Services;
 
@@ -91,6 +93,53 @@ namespace KrispyKreme.Controllers
         {
             bool eliminoCupon = _db.DeleteCupon(IdCupon);
             return Json(eliminoCupon, JsonRequestBehavior.AllowGet);
+        }
+
+        public void ExportarCupones()
+        {
+            List<Cupon> lstCupones = _db.LstCupones();
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                var ws = wb.Worksheets.Add("Cupones");
+
+                ws.Cell(1, 1).Value = "Código";
+                ws.Cell(1, 2).Value = "Serie";
+                ws.Cell(1, 3).Value = "Vigencia";
+                ws.Cell(1, 4).Value = "Estatus";
+                ws.Cell(1, 5).Value = "Establecimiento";
+
+                ws.Range(ws.Cell(1, 1).Address, ws.Cell(1, 5).Address).Style.Fill.BackgroundColor = XLColor.FromArgb(166, 166, 166);
+                ws.Range(ws.Cell(1, 1).Address, ws.Cell(1, 5).Address).Style.Font.FontColor = XLColor.FromArgb(0, 0, 0);
+                ws.Range(ws.Cell(1, 1).Address, ws.Cell(1, 5).Address).Style.Font.Bold = true;
+
+                int inicioRegistros = 2;
+                foreach (Cupon item in lstCupones)
+                {
+                    ws.Cell(inicioRegistros, 1).Value = item.Codigo;
+                    ws.Cell(inicioRegistros, 2).Value = item.Serie;
+                    ws.Cell(inicioRegistros, 3).Value = item.Vigencia.ToShortDateString();
+                    ws.Cell(inicioRegistros, 4).Value = item.Estatus.Nombre;
+                    ws.Cell(inicioRegistros, 5).Value = item.Establecimiento.Nombre;
+                    inicioRegistros++;
+                }
+
+                ws.Columns().AdjustToContents();
+                Server.ScriptTimeout = 6000;
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "aplication/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "Cupones.xlsx");
+
+                using(MemoryStream myMemory = new MemoryStream())
+                {
+                    wb.SaveAs(myMemory);
+                    myMemory.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+
+            }
         }
         #endregion
     }

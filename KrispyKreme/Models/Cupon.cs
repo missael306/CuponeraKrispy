@@ -14,7 +14,10 @@ namespace KrispyKreme.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CuponID { get; set; }
-        
+
+        [Display(Name = "Título")]
+        [Required(ErrorMessage = "Proporcione un titulo.")]
+        public string Titulo { get; set; }
         [Display(Name = "Codigo")]
         [Required(ErrorMessage = "Proporcione un codigo.")]
         public string Codigo { get; set; }

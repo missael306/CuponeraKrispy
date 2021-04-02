@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<KrispyKreme.Models.Cupon>
+@using KrispyKreme.Models
+@{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
@@ -20,161 +22,33 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Cupon 1</h3>
-                            <p>
-                                Slogan cupón
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detalle</a>
-                            </p>
+            @foreach (Cupon item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="productbox">
+                        <div class="fadeshop">
+                            <div class="captionshop text-center" style="display: none;">
+                                <h3>@item.Titulo</h3>
+                                <p>
+                                    Vigencia: @item.Vigencia.ToShortDateString()
+                                </p>
+                                <p>
+                                    <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>                                    
+                                </p>
+                            </div>
+                            <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
                         </div>
-                        <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Titulo cupon</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
+                        <div class="product-details">
+                            <a href="#">
+                                <h1>@item.Titulo</h1>
+                            </a>
+                            <span class="price">
+                                <span class="edd_price">Vigencia: @item.Vigencia.ToShortDateString()</span>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Cupon 1</h3>
-                            <p>
-                                Slogan cupón
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detalle</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Titulo cupon</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Cupon 1</h3>
-                            <p>
-                                Slogan cupón
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detalle</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Titulo cupon</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Cupon 1</h3>
-                            <p>
-                                Slogan cupón
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detalle</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Titulo cupon</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Cupon 1</h3>
-                            <p>
-                                Slogan cupón
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detalle</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Titulo cupon</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Cupon 1</h3>
-                            <p>
-                                Slogan cupón
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Obtener</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detalle</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/Content/plugins/images/cupon.png" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Titulo cupon</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            }            
         </div>
     </div>
 </section>
