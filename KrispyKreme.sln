@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrispyKreme", "KrispyKreme\KrispyKreme.csproj", "{D60348A2-E2CA-4F77-84D7-402E9CA84921}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EAE2BF26-C01C-4DBC-8906-8CA660219AB9} = {EAE2BF26-C01C-4DBC-8906-8CA660219AB9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceKrispy", "ServiceKrispy\ServiceKrispy.csproj", "{EAE2BF26-C01C-4DBC-8906-8CA660219AB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{D60348A2-E2CA-4F77-84D7-402E9CA84921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60348A2-E2CA-4F77-84D7-402E9CA84921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60348A2-E2CA-4F77-84D7-402E9CA84921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE2BF26-C01C-4DBC-8906-8CA660219AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE2BF26-C01C-4DBC-8906-8CA660219AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE2BF26-C01C-4DBC-8906-8CA660219AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE2BF26-C01C-4DBC-8906-8CA660219AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

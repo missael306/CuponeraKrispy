@@ -24,7 +24,7 @@ namespace KrispyKreme.Controllers
 
         #region Metodos      
         public ActionResult Index()
-        {
+        {            
             return View();
         }
 

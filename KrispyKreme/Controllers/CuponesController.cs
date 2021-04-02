@@ -141,6 +141,16 @@ namespace KrispyKreme.Controllers
 
             }
         }
+
+        public JsonResult CanjearCupon(int idCupon)
+        {
+            var validacion = new ServiceReference1.ValidaCupon();
+            using (ServiceReference1.Service1Client cliente = new ServiceReference1.Service1Client())
+            {
+                validacion = cliente.ValidarCupon(idCupon);                
+            }
+            return Json(validacion, JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }
