@@ -1,0 +1,42 @@
+﻿@model KrispyKreme.Models.Cupon
+@using KrispyKreme.Models
+
+@using (Html.BeginForm("AddUpdateCupon", "Cupones", FormMethod.Post, new { @id = "frmAddCupon" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.CuponID)
+    <div class="row form-group">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.HiddenFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Serie, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Serie, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+            @Html.ValidationMessageFor(model => model.Serie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Vigencia, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Vigencia, new { htmlAttributes = new { @class = "form-control", @type = "date", @required = "required" } })
+            @Html.ValidationMessageFor(model => model.Vigencia, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.EstatusID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.EstatusID, new SelectList((List<Estatus>)ViewBag.lstEstatus, "EstatusID", "Nombre", Model.EstatusID), "--Seleccione--", new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(model => model.EstatusID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.EstablecimientoID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.EstablecimientoID, new SelectList((List<Establecimiento>)ViewBag.lstEstablecimientos, "EstablecimientoID", "Nombre", Model.EstablecimientoID), "--Seleccione--", new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(model => model.EstablecimientoID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}

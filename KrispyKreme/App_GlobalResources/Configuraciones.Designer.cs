@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a FC.
+        /// </summary>
+        internal static string InicioFolios {
+            get {
+                return ResourceManager.GetString("InicioFolios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario y/o contraseña invalidos..
         /// </summary>
         internal static string MensajeErrorLogin {

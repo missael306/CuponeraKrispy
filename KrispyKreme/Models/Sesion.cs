@@ -7,6 +7,7 @@ namespace KrispyKreme.Models
 {
     public static class Sesion
     {
+        #region Atributos
         public static Usuario usuario
         {
             get
@@ -25,5 +26,21 @@ namespace KrispyKreme.Models
                 HttpContext.Current.Session["usuario"] = value;
             }
         }
+
+        public static bool usuarioEstaFirmado
+        {
+            get
+            {
+                return (HttpContext.Current.Session["usuario"] != null);                
+            }            
+        }
+        #endregion
+
+        #region Metodos
+        public static void destruirSesion()
+        {
+            usuario = null;
+        }
+        #endregion
     }
 }

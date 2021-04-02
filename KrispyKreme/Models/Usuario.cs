@@ -13,12 +13,7 @@ namespace KrispyKreme.Models
         #region Atributos
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UsuarioID { get; set; }
-
-        [Display(Name = "Perfil")]
-        [Required(ErrorMessage = "Seleccione una opción.")]
-        public int PerfilID { get; set; }
-        public virtual Perfil Perfil { get; set; }
+        public int UsuarioID { get; set; }        
 
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Proporcione un nombre.")]
@@ -31,6 +26,13 @@ namespace KrispyKreme.Models
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Proporcione una contraseña.")]
         public string Contrasena { get; set; }
+        #endregion
+
+        #region Relaciones 
+        [Display(Name = "Perfil")]
+        [Required(ErrorMessage = "Seleccione una opción.")]
+        public int PerfilID { get; set; }
+        public virtual Perfil Perfil { get; set; }
         #endregion
     }
 }

@@ -22,13 +22,13 @@ namespace KrispyKreme.Filters
                 {
                     if(filterContext.Controller is AccountController == false)
                     {
-                        filterContext.HttpContext.Response.Redirect("/Account/Configurar");
+                        filterContext.HttpContext.Response.Redirect("/Account/Index");
                     }
                 }
             }
             catch (Exception)
             {
-                filterContext.Result = new RedirectResult("~/Account/Login");
+                filterContext.Result = new RedirectResult("~/Account/Index");
             }
         }
         #endregion

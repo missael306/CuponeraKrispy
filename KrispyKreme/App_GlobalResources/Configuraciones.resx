@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InicioFolios" xml:space="preserve">
+    <value>FC</value>
+    <comment>Preposición para crear folios de cupones</comment>
+  </data>
   <data name="MensajeErrorLogin" xml:space="preserve">
     <value>Usuario y/o contraseña invalidos.</value>
     <comment>Mensaje a mostrar cuando el intento de login es fallido</comment>

@@ -22,7 +22,12 @@ namespace KrispyKreme.Controllers
         }
         #endregion
 
-        #region Metodos        
+        #region Metodos      
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(string email, string contrasena)
@@ -35,13 +40,14 @@ namespace KrispyKreme.Controllers
             }else
             {
                 ViewBag.ErrorSesion = RecursosGlobales.ObtenerRecurso("Configuraciones", "MensajeErrorLogin", "Usuario y/o contraseña invalidos.");
-                return RedirectToAction("Configurar", "Home");
+                return View("Index");
             }
-        }
+        }        
 
-        public ActionResult Configurar()
+        public ActionResult Logout()
         {
-            return View();
+            Sesion.destruirSesion();
+            return View("Index");
         }
         #endregion
     }

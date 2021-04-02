@@ -20,18 +20,37 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <h4>Perfil administrador</h4>
+                <p><b>Email:</b> admin@admin.com</p>
+                <p><b>Contraseña:</b> 1234</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2">
+                <h4>Perfil consulta</h4>
+                <p><b>Email:</b> consulta@consulta.com</p>
+                <p><b>Contraseña:</b> 1234</p>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "contactform" }))
                 {
+                    if (ViewBag.ErrorSesion != null)
+                    {
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            @ViewBag.ErrorSesion
+                        </div>
+                    }
                     @Html.AntiForgeryToken()
                     <div class="form">
-                        <input type="text" name="email" placeholder="Email *" value="admin@admin.com">
-                        <input type="password" name="contrasena" placeholder="Contraseña *" value="1234">
+                        <input type="text" name="email" placeholder="Email *" required="required">
+                        <input type="password" name="contrasena" placeholder="Contraseña *" required="required">
                         <input type="submit" id="submit" class="clearfix btn" value="Iniciar">
                     </div>
                 }
             </div>
         </div>
-    </div>    
+    </div>
 </section>
 

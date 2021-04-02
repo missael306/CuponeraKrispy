@@ -21,12 +21,11 @@ namespace KrispyKreme.Controllers
         }
         #endregion
 
-        #region Metodos
-        [AllowAnonymous]
+        #region Metodos        
         public ActionResult Index()
         {            
             return View();
-        }        
+        }                  
         #endregion       
     }
 }
